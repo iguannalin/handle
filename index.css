@@ -36,7 +36,7 @@ button {
   background: transparent;
   font-size: 48px;
   cursor: pointer;
-  margin-bottom: 24px;
+  margin: 24px 0;
   color: #a0a0a0;
   text-shadow: #858ebc -2px 2px 8px;
 }
@@ -51,15 +51,14 @@ table {
 
 td {
   border: 3px solid #333;
-  width: 50px;
-  height: 50px;
-  font-size: 36px;
+  width: 55px;
+  height: 55px;
   text-align: center;
   vertical-align: top;
 }
 
 td input {
-  max-width: 45px;
+  max-width: 50px;
   max-height: inherit;
   padding: 0;
   border: none;
@@ -71,7 +70,7 @@ td, td input, a {
   vertical-align: middle;
   color: #f9faffde;
   text-shadow: #858ebc -2px 2px 8px;
-  font-size: 16px;
+  font-size: 28px;
   text-align: center;
 }
 

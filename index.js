@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 
   let phrases = [];
   let solution;
-  let entry = "";
+  let entry = ["","","",""];
   const grid = document.getElementById("grid");
   let rowIndex = 0;
 
@@ -37,9 +37,9 @@ window.addEventListener("load", () => {
         input.type = "text";
         input.id = `td-${row}-${col}'`;
         td.appendChild(input);
-        input.onchange = (val) => {
-          console.log(val);
-          entry = tr.innerText;
+        input.onchange = (ev) => {
+          entry[col] = ev.target.value;
+          console.log({ev, entry});
         }
         tr.appendChild(td);
       }
