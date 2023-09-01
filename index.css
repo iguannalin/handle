@@ -66,7 +66,7 @@ td input {
 }
 
 td, td input, a {
-  font-family: "WenQuanYi Micro Hei", 'Times New Roman', Times, serif;
+  font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
   vertical-align: middle;
   color: #f9faffde;
   text-shadow: #858ebc -2px 2px 8px;
@@ -81,4 +81,14 @@ td input:focus {
 td input.red {
   color: #df1d48;
   text-shadow: #61636e -2px 2px 8px;
+}
+
+td.green {
+  background-color: green;
+}
+td.yellow {
+  background-color: yellow;
+}
+td.gray {
+  background-color: gray;
 }
