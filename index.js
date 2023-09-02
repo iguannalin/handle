@@ -9,6 +9,7 @@ window.addEventListener("load", () => {
   let solution;
   let entry = ["","","",""];
   const grid = document.getElementById("grid");
+  const title = document.getElementById("title");
   const reveal = document.getElementById("reveal");
   let rowIndex = 0;
 
@@ -42,6 +43,7 @@ window.addEventListener("load", () => {
     if (rowIndex >= 6) {
       reveal.innerHTML = "👹";
       reveal.onclick = null;
+      title.innerHTML = solution;
     }
   }
 
