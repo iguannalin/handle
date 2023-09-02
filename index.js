@@ -9,33 +9,40 @@ window.addEventListener("load", () => {
   let solution;
   let entry = ["","","",""];
   const grid = document.getElementById("grid");
+  const reveal = document.getElementById("reveal");
   let rowIndex = 0;
 
-  document.getElementById("reveal").onclick = (e) => {
-    console.log({entry})
+  reveal.onclick = (e) => {
     if (!solution || entry.join("").length != 4) return;
-    e.target.innerHTML = "⚉";
-    e.target.style.color = "#f9faffde";
     validate();
   }
 
-  // pinyin only!!! soz T_T
+  // simplified pinyin only!!! soz T_T
   function validate() {
-    console.log({entry, solution});
     const sol = solution.split("");
+    let check = 0;
     entry.forEach((ch, index) => {
       const cell = document.getElementById(`input-${rowIndex}-${index}`);
-      console.log({cell})
       // first check if in correct spot
-      if (ch == sol[index]) cell.parentElement.className = "green";
+      if (ch == sol[index]) { cell.parentElement.className = "green"; check++; }
       // then check correct word in wrong spot
       else if (solution.includes(ch)) cell.parentElement.className = "yellow";
       else cell.parentElement.className = "gray"
       cell.readOnly = true;
+      if (check == 4) {
+        reveal.innerHTML = "🧧";
+        reveal.onclick = null;
+        return;
+      }
+      if (rowIndex < 5) document.getElementById(`input-${rowIndex+1}-${index}`).readOnly = false; // disable rows by default, only enable for input when it's the input row
     });
     rowIndex++;
+    entry = ["","","",""];
     if (rowIndex < 6) document.getElementById(`input-${rowIndex}-0`).focus();
-    if (rowIndex > 6) alert("failed");
+    if (rowIndex >= 6) {
+      reveal.innerHTML = "👹";
+      reveal.onclick = null;
+    }
   }
 
   function onType(input, val, r, c) {
@@ -56,6 +63,7 @@ window.addEventListener("load", () => {
         input.id = `input-${row}-${col}`;
         td.appendChild(input);
         input.oninput = (ev) => onType(ev.target, ev.target.value, row, col);
+        if (row > 0) input.readOnly = true;
         tr.appendChild(td);
       }
       grid.appendChild(tr);

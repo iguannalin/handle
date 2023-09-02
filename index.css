@@ -50,7 +50,9 @@ table {
 }
 
 td {
-  border: 3px solid #333;
+  /* border: 3px solid #4c342b; */
+  border: 1px dashed red;
+  background-color: #fdfeffde;
   width: 55px;
   height: 55px;
   text-align: center;
@@ -68,8 +70,10 @@ td input {
 td, td input, a {
   font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
   vertical-align: middle;
-  color: #f9faffde;
-  text-shadow: #858ebc -2px 2px 8px;
+  color: #272626de;
+  text-shadow: #8288a3 -2px 2px 3px;
+  /* color: #f9faffde;
+  text-shadow: #858ebc -2px 2px 8px; */
   font-size: 28px;
   text-align: center;
 }
@@ -84,11 +88,11 @@ td input.red {
 }
 
 td.green {
-  background-color: green;
+  background-color: #29f038;
 }
 td.yellow {
-  background-color: yellow;
+  background-color: #fdfd04f0;
 }
 td.gray {
-  background-color: gray;
+  background-color: #555555;
 }
